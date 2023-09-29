@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ <head><title>Webapps Lab 06</title></head>
+<body>
+
+<h1>Author entry Venkatesh Mudam </h2>
+
+<!--<form>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">What is your nickname </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Get values from form">
+</form>
+-->
+
+
+<form>
+    <div class="mb-3">
+      <label for="form1_age">The hidden author name</label>
+      <input type="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="Dickens">
+    </div>
+    <div class="mb-3">
+      <label for="form1_nick">Guess the author</label>
+      <input type="text" id="form1_nick" name="form1_nick" autofocus>
+    </div>
+    <input class="btn btn-primary mb-3" type="button" value="Check the guess" onclick="checkAuthor()">
+</form>
+    <p id="out">This text will be replaced</p>
+
+
+
+<script> 
+    let good =0
+    let oops =0
+function checkAuthor(){
+    
+    
+    console.log("Getting form values")
+    name1 = document.getElementById("form1_age").value
+    name2 = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+name1+" and "+name2)
+    output = document.getElementById("out")
+    if(name1==name2){
+        good=good+1
+        alert("You got it right")
+    }
+    else{
+        oops=oops+1
+        alert("Sorry")
+    }
+    output.innerHTML="good count "+good+"  oops count "+oops
+    output.style.color= "#ff0000"
+}
+</script>
+
+</body>
+</html> 
