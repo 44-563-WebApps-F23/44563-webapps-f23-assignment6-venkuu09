@@ -26,13 +26,10 @@
   
     <input type="radio" id="calcMult" name="operation" value="product" onclick="chooseOp()">
     <label for="calcMult">mult</label></br>
-
 </form>
 
   <p id="operation_Result"></p>
-
-
-
+<!-- ------------------------------------------------------------------------------------------- -->
 <script> 
 
 function tips() {
@@ -56,23 +53,23 @@ function chooseOp() {
         
         const operation = document.querySelector('input[name="operation"]:checked').value;
         
-        const base = parseFloat(document.getElementById('form1_baseAmount').value);
-        const tip = parseFloat(document.getElementById('form1_tipPercent').value);
+        const base1 = parseFloat(document.getElementById('form1_baseAmount').value);
+        const tip1 = parseFloat(document.getElementById('form1_tipPercent').value);
         
     let calcResult;
 
         switch (operation) {
 		        case "sum":
-                    calcResult = `Sum of ${base} and ${tip} is ${base + tip}`;
+                    calcResult = `Sum of ${base1} and ${tip1} is ${base1 + tip1}`;
                     break;
                 case "difference":
-                    calcResult = `Difference between ${base} and ${tip} is ${base - tip}`;
+                    calcResult = `Difference between ${base1} and ${tip1} is ${base1 - tip1}`;
                     break;
                 case "product":
-                    calcResult = `Product of ${base} and ${tip} is ${base * tip}`;
+                    calcResult = `Product of ${base1} and ${tip1} is ${base1 * tip1}`;
                     break;
                 default:
-                    calcResult = "Please select an operation.";
+                    calcResult = "Please select Either Sum or Difference or Multiplication";
             }
 
             document.getElementById('operation_Result').textContent = `${calcResult}`;
