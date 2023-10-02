@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
- <head><title>Webapps Lab 06</title></head>
+ <head><title>Javascript on cruise</title></head>
 <body>
 
 <h1>Author entry Venkatesh Mudam </h2>
+
+    
 
 <!--<form>
     <label for="form1_age">What is your age </label>
@@ -54,7 +56,34 @@ function checkAuthor(){
     output.innerHTML="good count "+good+"  oops count "+oops
     output.style.color= "#ff0000"
 }
+
+ useImage = 1;
+
+        function selectImage() {
+            switch (useImage) {
+                case 1:
+                    document.getElementById('city').src ="delhi.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    document.getElementById('city').src ="agra.jpg";
+                    useImage = 3;
+                    break;
+                case 3:
+                    document.getElementById('city').src ="mumbai.jpg";
+                    useImage = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+
 </script>
+
+<div>
+    <img id="city" src="mumbai.jpg" width="100" height="100" onclick="selectImage()">
+</div>
+
 
 </body>
 </html> 
