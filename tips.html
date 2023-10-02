@@ -15,13 +15,29 @@
 
 <button onclick="tips()">Show tip</button>
 
-<p id="result">Please click on show tip to show tip amount</p>
+<p id="result">Please click on "show tip" to show tip amount</p>
+
+<form>
+    <input type="radio" id="calcSum" name="operation" value="sum" onclick="chooseOp()">
+    <label for="calcSum">sum</label></br>
+  
+    <input type="radio" id="calcDiff" name="operation" value="difference" onclick="chooseOp()">
+    <label for="calcDiff">diff</label></br>
+  
+    <input type="radio" id="calcMult" name="operation" value="product" onclick="chooseOp()">
+    <label for="calcMult">mult</label></br>
+
+</form>
+
+  <p id="operation_Result"></p>
+
+
 
 <script> 
 
 function tips() {
-            const base_Amount = parseFloat(document.getElementById('form1_baseAmount').value);
-            const tip_Percent = parseFloat(document.getElementById('form1_tipPercent').value);
+        const base_Amount = parseFloat(document.getElementById('form1_baseAmount').value);
+        const tip_Percent = parseFloat(document.getElementById('form1_tipPercent').value);
 
             let toShow= "";
 
@@ -32,9 +48,35 @@ function tips() {
             }
             // const tip_Amount = (base_Amount * tip_Percent) / 100;
 
-            document.getElementById('result').textContent = `Tips are: ${toShow}`;
+            toShow = document.getElementById('result').textContent = `Tips are: ${toShow}`;
         }
 
+    
+function chooseOp() {
+        
+        const operation = document.querySelector('input[name="operation"]:checked').value;
+        
+        const base = parseFloat(document.getElementById('form1_baseAmount').value);
+        const tip = parseFloat(document.getElementById('form1_tipPercent').value);
+        
+    let calcResult;
+
+        switch (operation) {
+		        case "sum":
+                    calcResult = `Sum of ${base} and ${tip} is ${base + tip}`;
+                    break;
+                case "difference":
+                    calcResult = `Difference between ${base} and ${tip} is ${base - tip}`;
+                    break;
+                case "product":
+                    calcResult = `Product of ${base} and ${tip} is ${base * tip}`;
+                    break;
+                default:
+                    calcResult = "Please select an operation.";
+            }
+
+            calcResult = document.getElementById('operation_Result').textContent = `${calcResult}`;
+    }
 </script>
 
 </body>
