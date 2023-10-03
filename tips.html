@@ -41,7 +41,7 @@ function tips() {
             for (let i = 0; i < 5; i++) {
                 const tipLevel = tip_Percent + i * 4;
                 const calculatedTip = (base_Amount * tipLevel) / 100;
-                toShow += `${tipLevel}% is ${calculatedTip.toFixed(2)}; `;
+                toShow += `${tipLevel}% is ${calculatedTip.toFixed(1)}; `;
             }
             // const tip_Amount = (base_Amount * tip_Percent) / 100;
 
