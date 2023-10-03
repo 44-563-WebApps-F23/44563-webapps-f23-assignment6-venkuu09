@@ -3,5 +3,8 @@
 Introduction to Java Script and DOM
 
 Hosted at https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-venkuu09/author.html
-Hosted at https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-venkuu09/tips.html
-Hosted at https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-venkuu09/cruise.html
+<br>
+https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-venkuu09/tips.html
+<br>
+https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-venkuu09/cruise.html
+<br>
