@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><title>Javascript on cruise</title></head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<head><title>Javascript on cruise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 <body>
 
 <h1>Author entry Venkatesh Mudam</h2>
@@ -34,10 +35,10 @@
 <!-- ----------------------------------------------------------------------- -->
 
 <script> 
-    let good =0
-    let oops =0
+    let good =0;
+    let oops =0;
+    let count=0;
 function checkAuthor(){
-    
     
     console.log("Getting form values")
     name1 = document.getElementById("form1_age").value
@@ -45,13 +46,19 @@ function checkAuthor(){
     confirmed = confirm("Are these the values? "+name1+" and "+name2)
     output = document.getElementById("out")
     if(name1==name2){
+        count=0
         good=good+1
         alert("You got it right")
     }
-    else{
+    else if (count<7){
         oops=oops+1
+        count=count+1
         alert("Sorry")
     }
+    else{
+        alert("Sorry, ran out of guesses.")
+    }
+    
     output.innerHTML="good count "+good+"  oops count "+oops
     output.style.color= "#ff0000"
 }
@@ -73,6 +80,7 @@ function checkAuthor(){
                     useImage = 1;
                     break;
                 default:
+                    document.getElementById('city').src ="delhi.jpg";
                     break;
             }
         }
