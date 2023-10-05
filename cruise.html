@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head><title>Cruise Line</title>
+    <style>
+        #cruiseSelect{
+            color: rgb(121, 1, 11);
+        }
+        #cruiseUpdate{
+            color: rgb(16, 186, 47);
+        }
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -21,7 +29,7 @@
     <label for="Pool">Pool Pass</label><br><br>
 </form>
 <button class="btn btn-primary" onclick="selectCruise()">Select a cruise</button>
-<p id="cruise_Result"></p>
+<p id="cruiseSelect"></p>
 <br>
 <form>
     <label for="days">Enter the number of days</label>
@@ -32,7 +40,7 @@
     
 </form>
 <button class="btn btn-primary" onclick="updateCruise()">Update the cruise</button>
-<p id="cruise_Select_Result"></p>
+<p id="cruiseUpdate"></p>
 
 <!-- ------------------------------------------------------------------------------- -->
 
@@ -45,7 +53,7 @@ function selectCruise() {
     my_cruise.breakfast = document.getElementById('Breakfast').checked;
     my_cruise.pool = document.getElementById('Pool').checked;
 
-    document.getElementById('cruise_Result').textContent = `${JSON.stringify(my_cruise)}`;
+    document.getElementById('cruiseSelect').textContent = `${JSON.stringify(my_cruise)}`;
 }
 
 function updateCruise() {
@@ -55,7 +63,7 @@ function updateCruise() {
     my_cruise["days"] = days;
     my_cruise["price"] = price;
 
-    document.getElementById('cruise_Select_Result').innerHTML = JSON.stringify(my_cruise);
+    document.getElementById('cruiseUpdate').innerHTML = JSON.stringify(my_cruise);
     // document.getElementById('cruise_Select_Result').textContent = `${JSON.stringify(my_cruise)}`;
 }
 </script>

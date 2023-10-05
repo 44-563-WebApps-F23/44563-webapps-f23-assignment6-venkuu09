@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
  <head><title>Cruise Tips</title>
+    <style>
+        #result{
+            color: rgb(121, 1, 11);
+        }
+        #operationResult{
+            color: rgb(16, 186, 47);
+        }
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -9,7 +17,7 @@
 <body>
 
 <h2>Venkatesh Mudam shows tip amounts</h2>
-
+<br>
 <form>
     <label for="form1_baseAmount">Enter base amount </label>
     <input type="number" id="form1_baseAmount" name="form1_baseAmount" value="50"><br><br>
@@ -20,7 +28,7 @@
 
 <button class="btn btn-primary" onclick="tips()">Show tip</button>
 
-<p id="result">Please click on "show tip" to show tip amount</p>
+<b><p id="result">Please click on "show tip" to show tip amount</p></b>
 
 <form>
     <input type="radio" id="calcSum" name="operation" value="sum" onclick="chooseOp()">
@@ -33,7 +41,7 @@
     <label for="calcMult">mult</label><br>
 </form>
 
-  <p id="operation_Result"></p>
+  <b><p id="operationResult">Please select the above radio button</p></b>
 <!-- ------------------------------------------------------------------------------------------- -->
 <script> 
 
@@ -80,7 +88,7 @@ function chooseOp() {
                     calcResult = "Please select Either Sum or Difference or Multiplication";
             }
 
-            document.getElementById('operation_Result').textContent = `${calcResult}`;
+            document.getElementById('operationResult').textContent = `${calcResult}`;
     }
 </script>
 
