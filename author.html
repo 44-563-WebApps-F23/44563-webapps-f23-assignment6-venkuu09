@@ -5,10 +5,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+        width: 90%;
+        margin: 0px auto;
+    }
+    </style>
 </head>
 <body>
 
-<h1>Author entry Venkatesh Mudam</h2>
+<h1>Author entry Venkatesh Mudam</h1>
 
 <form>
     <div class="mb-3">
@@ -19,7 +25,7 @@
       <label for="form1_nick">Guess the author</label>
       <input type="text" id="form1_nick" name="form1_nick" autofocus>
     </div>
-    <input class="btn btn-primary mb-3" type="button" value="Check the guess" onclick="checkAuthor()">
+    <input class="btn btn-primary mb-3" type="button" id="authButton" value="Check the guess" onclick="checkAuthor()">
 
     
 </form>
@@ -30,6 +36,7 @@
     <div>
         <img id="city" src="mumbai.jpg" width="100" height="100" onclick="selectImage()">
     </div>
+
     
 
 <!-- ----------------------------------------------------------------------- -->
@@ -43,24 +50,29 @@ function checkAuthor(){
     console.log("Getting form values")
     name1 = document.getElementById("form1_age").value
     name2 = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+name1+" and "+name2)
+    // confirmed = confirm("Are these the values? "+name1+" and "+name2)
     output = document.getElementById("out")
     if(name1==name2){
         count=0
         good=good+1
         alert("You got it right")
     }
-    else if (count<7){
+    else if (count<=7){
         oops=oops+1
         count=count+1
         alert("Sorry")
     }
     else{
-        alert("Sorry, ran out of guesses.")
+        let authButton = document.getElementById('authButton');
+        authButton.onclick = errorMsg() ;
+        document.getElementById('authButton').disabled=true;
+        
     }
-    
+    if (count<=7){
     output.innerHTML="good count "+good+"  oops count "+oops
     output.style.color= "#ff0000"
+
+    }
 }
 
  useImage = 1;
@@ -84,6 +96,11 @@ function checkAuthor(){
                     break;
             }
         }
+
+        function errorMsg() {
+        alert("Sorry, ran out of guesses");
+        output.innerHTML="Sorry, ran out of guesses";
+    }
 
 </script>
 
