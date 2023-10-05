@@ -29,7 +29,7 @@
 
     
 </form>
-    <p id="out">This text will be replaced</p><br>
+    <div id="out">This text will be replaced</div><br>
 
     <p>Please click on the image to see the next image.</p>
 
@@ -57,7 +57,7 @@ function checkAuthor(){
         good=good+1
         alert("You got it right")
     }
-    else if (count<=7){
+    else if (count<7){
         oops=oops+1
         count=count+1
         alert("Sorry")
@@ -68,7 +68,7 @@ function checkAuthor(){
         document.getElementById('authButton').disabled=true;
         
     }
-    if (count<=7){
+    if (count<7){
     output.innerHTML="good count "+good+"  oops count "+oops
     output.style.color= "#ff0000"
 
